@@ -1,0 +1,26 @@
+.form-inicio-sesion {
+    width: 450px;
+    margin: auto;
+}
+
+.form-button {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.titulo-form {
+    text-align: center;
+    margin: 1.8rem 0;
+    color: #ff5454;
+    font-size: 2.5rem;
+}
+
+@media (max-width: 740px) {
+    form.form-inicio-sesion {
+        width: 85%;
+    }
+    .titulo-form {
+        font-size: 2rem;
+    }
+}

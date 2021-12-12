@@ -1,0 +1,182 @@
+.seccion-titulo {
+    font-size: 40px;
+    margin: 32px 0px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+
+/* SECCIÓN IMAGEN DE LA HOME */
+
+.imagen-home {
+    background-image: linear-gradient( to bottom, rgba(0, 0, 0, 0.5) 10%, transparent), url(https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80);
+    height: 500px;
+    /* display: flex;
+    justify-content: center;
+    align-items: flex-end; */
+    background-size: cover;
+    background-position: 0% 90%;
+    position: relative;
+}
+
+
+/* .imagen-home::before {
+    content: "";
+    background-color: rgba(1, 1, 1, 0.2);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+} */
+
+.title-img-home {
+    font-weight: 900;
+    font-style: italic;
+    color: white;
+    font-size: 45px;
+    text-shadow: 0px 0px 20px #000000;
+    text-transform: uppercase;
+}
+
+.contenedor-titulos-home {
+    position: absolute;
+    bottom: 65px;
+    left: 6rem;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+
+/* FIN SECCIÓN IMAGEN DE LA HOME */
+
+
+/* ESTILOS ARTICULOS DE LA HOME  */
+
+section#seccion-cursos {
+    margin: 32px 0;
+}
+
+.curso h1,
+.curso h3 {
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+}
+
+.contenedor-cursos {
+    /* width: 80%; */
+    margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.curso {
+    color: #202036;
+    background-color: #78d9ff;
+    text-align: center;
+    padding: 40px;
+    margin: 20px;
+    width: 30%;
+    vertical-align: middle;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 35rem;
+    transition: box-shadow 0.2s linear, transform 0.4s ease-in-out;
+}
+
+.curso img {
+    width: 20%;
+}
+
+.curso:hover {
+    box-shadow: 0px 0px 10px 5px #888888;
+    transform: scale(1.1);
+}
+
+.curso-resaltado {
+    background-color: #0e6182;
+    color: white;
+    box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0.5);
+    height: 38rem;
+}
+
+.titulo-curso {
+    color: #202036;
+    font-size: 40px;
+    text-shadow: 2px 2px 2px #888;
+    font-weight: 900;
+}
+
+.titulo-promo {
+    background-color: white;
+    color: #0e6182;
+    padding: 8px;
+    box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0.5);
+    border-radius: 8px;
+    font-size: 1.5rem;
+}
+
+.curso>h3 {
+    font-size: 25px;
+}
+
+.curso-resaltado .titulo-curso {
+    color: white;
+}
+
+.curso-resaltado .precio-curso {
+    color: #202036;
+}
+
+.lista-curso {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.lista-curso li {
+    margin: 8px 0;
+}
+
+
+/* FIN ESTILOS ARTICULOS DE LA HOME */
+
+
+/* Inicio Media queries */
+
+@media (max-width: 640px) {
+    .contenedor-titulos-home {
+        left: 0;
+    }
+    .title-img-home {
+        font-size: 32px;
+    }
+    .curso {
+        width: 100%;
+        margin: 20px 0;
+    }
+    .contenedor-cursos {
+        display: block;
+    }
+    .titulo-curso {
+        font-size: 30px;
+    }
+}
+
+
+/* Fin Media queries */
+
+@keyframes fadeIn {
+    0% {
+        transform: translateX(200px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

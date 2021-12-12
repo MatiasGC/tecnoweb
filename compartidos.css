@@ -1,0 +1,345 @@
+@import url("https://fonts.googleapis.com/css2??family=Anton&family=Lato:wght@700&family=Lato:wght@900&family=Open+Sans:wght@600&display=swap?family=Open+Sans:ital,wght@1,800&display=swap");
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    display: grid;
+    grid-template-rows: 6.2rem auto fit-content(7rem);
+    height: 100%;
+    grid-template-areas: "header" "contenido-principal" "footer";
+}
+
+
+/* HEADER */
+
+.header-principal {
+    background-color: #00a3e3;
+    padding: 0px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    grid-area: header;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+
+.header-principal-nav>.header-principal-ul a,
+.mobile-nav-li a {
+    color: #202036;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: "Open Sans", sans-serif;
+    /* transition: color 200ms ease-in-out, border-bottom 200ms ease-in-out; */
+    transition: all 200ms ease-in-out;
+}
+
+.header-principal-nav>.header-principal-ul a:hover,
+.header-principal-nav>.header-principal-ul a:focus {
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+.header-principal-ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+}
+
+.header-principal-li {
+    margin: 0 24px;
+}
+
+li.header-principal-li.registro a,
+li.mobile-nav-li.registro a {
+    padding: 0.5rem 1rem;
+    background: #ff1b68;
+    border-radius: 8px;
+    color: white;
+}
+
+li.header-principal-li.registro a:hover {
+    color: #ff1b68;
+    background: white;
+    border: none;
+}
+
+li.header-principal-li.registro {
+    animation-name: moveLink;
+    animation-duration: 0.4s;
+    animation-delay: 2s;
+    animation-iteration-count: 10;
+}
+
+.header-principal-link-logo {
+    font-family: Anton, sans-serif;
+    text-decoration: none;
+    font-size: 25px;
+    color: #202036;
+    font-weight: bold;
+    /*para cuando se agregue la bar responsive*/
+    vertical-align: middle;
+}
+
+.header-principal-link-logo img {
+    width: 100px;
+}
+
+main {
+    grid-area: contenido-principal;
+}
+
+
+/* FIN HEADER */
+
+.backdrop {
+    background: rgba(1, 1, 1, 0.5);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 6;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.contenedor-btn {
+    margin-top: 30px;
+}
+
+button {
+    background-color: #202036;
+    color: white;
+    font: inherit;
+    border: 1.5px solid #202036;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover,
+button:active {
+    color: #202036;
+    background-color: white;
+}
+
+button:focus {
+    outline: none;
+}
+
+
+/* HAMBURGER ICON */
+
+.hamburger_button {
+    display: none;
+    vertical-align: middle;
+    width: 3rem;
+    background: transparent !important;
+    border: none;
+    cursor: pointer;
+    padding-top: 0;
+    padding-bottom: 0px;
+    position: relative;
+    z-index: 6;
+}
+
+.hamburger_button-bar {
+    height: 3px;
+    width: 100%;
+    background: black;
+    display: block;
+    margin: 0.5rem 0;
+    transform-origin: 2rem;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.hamburger_button.open .hamburger_button-bar:nth-child(1) {
+    transform: rotate(-45deg);
+}
+
+.hamburger_button.open .hamburger_button-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger_button.open .hamburger_button-bar:nth-child(3) {
+    transform: rotate(45deg);
+}
+
+
+/* END HAMBURGER ICON */
+
+
+/* MOBILE NAV */
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -60vw;
+    background: #00a3e3;
+    width: 60%;
+    height: 100vh;
+    transition: transform 0.4s linear;
+}
+
+.mobile-nav-ul {
+    height: 100%;
+    list-style: none;
+    margin: 50% 15%;
+    padding: 0;
+    text-align: start;
+}
+
+li.mobile-nav-li {
+    padding: 5% 0;
+}
+
+.mobile-nav-li a {
+    font-size: 1.8rem;
+}
+
+.mobile-nav.open {
+    transform: translate(-100%);
+}
+
+.mobile-nav.open+.backdrop {
+    opacity: 0.5;
+}
+
+
+/* FIN MOBILE NAV */
+
+
+/*  FOOTER */
+
+.footer {
+    background-color: black;
+    padding: 18px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    grid-area: footer;
+}
+
+.footer-ul {
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.footer-li {
+    /* display: inline-block; */
+    margin: 0 16px;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+}
+
+.footer-link:hover {
+    color: #cccccc;
+}
+
+
+/* .footer nav {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.contenedor-redes-sociales {
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(100% - 325px);
+    text-align: end;
+} */
+
+.contenedor-redes-sociales {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedor-redes-sociales a {
+    text-decoration: none;
+    color: white;
+    font-size: 35px;
+    margin: 0 10px;
+}
+
+.contenedor-redes-sociales a:hover,
+.contenedor-redes-sociales a:active {
+    color: #cccccc;
+}
+
+.title-redes {
+    color: white;
+    margin-bottom: 10px;
+    text-align: end;
+    font-size: 1.2rem;
+}
+
+
+/*  Fin FOOTER */
+
+@media (max-width: 740px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .footer-ul {
+        display: block;
+    }
+    .contenedor-redes-sociales {
+        margin-top: 16px;
+    }
+    .hamburger_button {
+        display: block;
+    }
+    .header-principal-nav {
+        display: none;
+    }
+    .header-principal {
+        justify-content: space-between;
+        padding: 0 30px;
+    }
+}
+
+
+/* @media (orientation: landscape) {
+    .mobile-nav {
+        right: -83vw;
+        width: 45%;
+        height: 100%;
+    }
+    .backdrop {
+        width: 100%;
+        height: 100%;
+    }
+} */
+
+@keyframes moveLink {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(-20deg);
+    }
+    100% {
+        transform: rotate(20deg);
+    }
+}
